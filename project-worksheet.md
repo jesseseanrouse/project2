@@ -7,7 +7,7 @@ https://github.com/jesseseanrouse/project2/blob/master/project-worksheet.md
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+The app will help students balance equations and do Stoichemetry without having to do the math. It will be meant to be a resource so students can either check thier work or focus on understanding these concepts without getting caught up on the math aspect.
 
 ## API
 
@@ -24,7 +24,7 @@ const [bookData, setBookData] = useState({});
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Also, define the the React components and the architectural design of your app.
 
 - [add link to your wireframes]()
-- [add link to your react architecture]()
+-  https://docs.google.com/drawings/d/1UC0QGcVHJM5qDoEVOTcnKAfh5fywddXebJPbRHwOMS8/edit
 
 
 ### MVP/PostMVP - 5min
