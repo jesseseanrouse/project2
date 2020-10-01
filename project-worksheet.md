@@ -2,7 +2,7 @@
 
 ## Project Links
 
-- [add your github repo link]()
+https://github.com/jesseseanrouse/project2/blob/master/project-worksheet.md
 - [add your deployment link]()
 
 ## Project Description
