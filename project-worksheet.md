@@ -23,22 +23,30 @@ const [bookData, setBookData] = useState({});
 
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Also, define the the React components and the architectural design of your app.
 
-- [add link to your wireframes]()
--  https://docs.google.com/drawings/d/1UC0QGcVHJM5qDoEVOTcnKAfh5fywddXebJPbRHwOMS8/edit
-
-
-### MVP/PostMVP - 5min
-
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
+-  https://res.cloudinary.com/doeh54t5k/image/upload/v1601585129/IMG_20201001_133948_zlxcls.jpg
+-  https://docs.google.com/drawings/d/1UC0QGcVHJM5qDoEVOTcnKAfh5fywddXebJPbRHwOMS8/edit  
 
 #### MVP EXAMPLE
-- Find and use external api 
-- Render data on page 
-- Allow user to interact with the page
+
+- Set up Home and Component System (each one being rendered by parent)
+- Call api and send data to a couple of children to make sure it's working
+- Build Navbar function with working links for components
+- Build Balancing Equations: User builds equation
+- Build Balancing Equation: User add coefficients to equation
+- Build Balancing Equation: Do math
+- Build Stoich: Balance Equation 
+- Build Stoich: Build Starting point and collect info
+- Build Stoich: Build End Point and collect info
+- Build Stoich: Build math to get start to end points
+- Basic CSS so the site looks ok
 
 #### PostMVP EXAMPLE
 
-- Add localStorage or firebase for storage
+- CSS the site so it looks beautiful
+- Periodic Table display mobile
+- Periodic Table display Tablet
+- Periodic Table display Computer
+- When click on element it shows details of that element
 
 ## Components
 ##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
