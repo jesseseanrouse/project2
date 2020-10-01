@@ -11,11 +11,9 @@ Use this section to describe your final project and perhaps any links to relevan
 
 ## API
 
-I don't think I want to build a library site but this is to show I can use api to get data from internet.
-
 ```
 const [bookData, setBookData] = useState({});
-  fetch("https://openlibrary.org/works/OL45883W.json")
+  fetch("https://neelpatel05.pythonanywhere.com/")
     .then((res) => res.json())
     .then((data) => setBookData(data));
 ```
