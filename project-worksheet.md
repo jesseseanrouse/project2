@@ -21,8 +21,6 @@ const [bookData, setBookData] = useState({});
 
 ## Wireframes
 
-Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Also, define the the React components and the architectural design of your app.
-
 -  https://res.cloudinary.com/doeh54t5k/image/upload/v1601585129/IMG_20201001_133948_zlxcls.jpg
 -  https://docs.google.com/drawings/d/1UC0QGcVHJM5qDoEVOTcnKAfh5fywddXebJPbRHwOMS8/edit  
 
@@ -49,27 +47,43 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 - When click on element it shows details of that element
 
 ## Components
-##### Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
 
-Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. 
+May have more or less depending on needs of the App
 
 | Component | Description | 
 | --- | :---: |  
 | App | This will make the initial data pull and include React Router| 
-| Header | This will render the header include the nav | 
-| Footer | This will render the header include the nav | 
+| Home | This will have the NavBar and render everything here | 
+| Balance | This will have two children for each step. Also displays the result of first component | 
+| Balance Equation | Takes in values and builds equations. Also checks symbols to verify that it is an element | 
+| Balance Elements | Dynamically updates how many elements that are on each side of the equation | 
+| Stoich | Host the renders for Doing Stoich | 
+| Stoich Equation | input the equation for Stoich |
+| Stoich Start/End | Has the user input start values and desired end pont | 
+| Stoich Math | Does the math | 
+| Wiki | Desplays Periodic Table/List of Elements that are clickable | 
+| Wiki Details | Shows Details for element selected | 
 
-
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| App | H | .5 hrs| -hrs | -hrs |
+| Home| H | 1 hr| hrs | hrs |
+| Balance | H | .5 hrs | hrs | hrs |
+| Balance Equation | H | 3 hrs | hrs | hrs |
+| Balance Elements | H | 3 hrs | hrs | hrs |
+| Stoich | M | .5 hr| hrs | hrs |
+| Stoich Equation | M | 3 hr| hrs | hrs |
+| Stoich Start/End | M | 3 hr| hrs | hrs |
+| Stoich Math | M | 4 hr| hrs | hrs |
+| Wiki | L | 3 hr| hrs | hrs |
+| Wiki Details | L | 1 hr| hrs | hrs |
+| Total | H | 22.5 hrs| hrs | hrs |
+
+I'm really including CSS times up above, mostly taking function into account. I'll propbabily spend 10+ hours on CSS jazziness
 
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project such as Axios, ReactStrap, D3, etc. 
+ react 
 
 ## Code Snippet
 
