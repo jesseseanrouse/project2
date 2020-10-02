@@ -81,7 +81,7 @@ May have more or less depending on needs of the App
 | Wiki Details | L | 1 hr| hrs | hrs |
 | Total | H | 22.5 hrs| hrs | hrs |
 
-I'm really including CSS times up above, mostly taking function into account. I'll propbabily spend 10+ hours on CSS jazziness
+I'm really not including CSS times up above, mostly taking function into account. I'll propbabily spend 10+ hours on CSS jazziness
 
 ## Additional Libraries
  react 
