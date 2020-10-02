@@ -12,10 +12,10 @@ The app will help students balance equations and do Stoichemetry without having 
 ## API
 
 ```
-const [bookData, setBookData] = useState({});
+const [eleData, setEleData] = useState({});
   fetch("https://neelpatel05.pythonanywhere.com/")
     .then((res) => res.json())
-    .then((data) => setBookData(data));
+    .then((data) => setEleData(data));
 ```
 
 
