@@ -22,7 +22,7 @@ const [bookData, setBookData] = useState({});
 ## Wireframes
 
 -  https://res.cloudinary.com/doeh54t5k/image/upload/v1601585129/IMG_20201001_133948_zlxcls.jpg
--  https://docs.google.com/drawings/d/1UC0QGcVHJM5qDoEVOTcnKAfh5fywddXebJPbRHwOMS8/edit  
+-  https://docs.google.com/drawings/d/1UC0QGcVHJM5qDoEVOTcnKAfh5fywddXebJPbRHwOMS8/edit?usp=sharing
 
 #### MVP EXAMPLE
 
