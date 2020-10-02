@@ -89,7 +89,7 @@ I'm really not including CSS times up above, mostly taking function into account
 | Conponent Setup | 1 | |
 | Balance Functionality | 2 | |
 | Stoich Functionality | 3 | |
-| CSS for Site | 4| |
+| SCSS for Site | 4| |
 | Wiki | 4 | |
 |Bug Fixing/try to break | 5 |
 
