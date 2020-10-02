@@ -2,8 +2,8 @@
 
 ## Project Links
 
-https://github.com/jesseseanrouse/project2/blob/master/project-worksheet.md
-https://brave-brahmagupta-b292be.netlify.app
+-  https://github.com/jesseseanrouse/project2/blob/master/project-worksheet.md
+-  https://brave-brahmagupta-b292be.netlify.app
 
 ## Project Description
 
