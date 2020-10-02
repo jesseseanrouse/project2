@@ -83,6 +83,17 @@ May have more or less depending on needs of the App
 
 I'm really not including CSS times up above, mostly taking function into account. I'll propbabily spend 10+ hours on CSS jazziness
 
+| Objective | Day | Actual Day |
+| Gatsby Reasearch | - 2 |  |
+| Conponent Setup | 1 | |
+| Balance Functionality | 2 | |
+| Stoich Functionality | 3 | |
+| CSS for Site | 4| |
+| Wiki | 4 | |
+|Bug Fixing/try to break | 5 |
+
+Day is Monday
+
 ## Additional Libraries
  react 
 
