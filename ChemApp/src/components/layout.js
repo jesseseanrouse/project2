@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useEffect, useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -22,6 +22,13 @@ const Layout = ({ children }) => {
       }
     }
   `)
+  // Finally got this working
+  const [eleData, setEleData] = useState({})
+  useEffect(() => {
+    fetch("https://neelpatel05.pythonanywhere.com/")
+      .then(res => res.json())
+      .then(data => setEleData(data))
+  }, [])
 
   return (
     <>
@@ -34,9 +41,11 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
+        <footer
+          style={{
+            marginTop: `2rem`,
+          }}
+        >
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.com">Gatsby</a>

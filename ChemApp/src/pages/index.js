@@ -6,11 +6,11 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 
 
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hello fellow humans</h1>
-    <p>Now go build something great.</p>
+    <h1>Hello</h1>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>
