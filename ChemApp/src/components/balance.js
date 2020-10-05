@@ -6,8 +6,13 @@ const Balance = (props) => {
     // console.log(props)
     const [value, setValue] = useState('')
     const [equation, setEquation] = useState([''])
+    
     const handleClickAdd = (e) => {
         e.preventDefault()
+        const symbols = props.data.map(ele => {
+        return ({symbol: ele.symbol})
+        })
+        // console.log(symbols)
         let array = equation
         array.push(value)
         setEquation(array)

@@ -29,7 +29,9 @@ const Layout = ({ children }) => {
   useEffect(() => {
     fetch("https://neelpatel05.pythonanywhere.com/")
       .then(res => res.json())
-      .then(data => setEleData(data))
+      .then(data => {
+        setEleData(data)
+      })
   }, [])
   
 
