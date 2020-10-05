@@ -85,7 +85,7 @@ I'm really not including CSS times up above, mostly taking function into account
 
 | Objective | Day | Actual Day |
 | --- | :---: |  :---: |
-| Gatsby Reasearch | - 2 |  |
+| Gatsby Reasearch | - 2 | 1 |
 | Conponent Setup | 1 | |
 | Balance Functionality | 2 | |
 | Stoich Functionality | 3 | |
