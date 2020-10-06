@@ -8,15 +8,20 @@ const Balance = (props) => {
     const [equation, setEquation] = useState([''])
     
     const handleClickAdd = (e) => {
+        // To prevent any shenanigans 
         e.preventDefault()
+        // To get a list of symbols to verify that entered values are elements
         const symbols = props.data.map(ele => {
         return ({symbol: ele.symbol})
         })
         // console.log(symbols)
-        let array = equation
-        array.push(value)
-        setEquation(array)
-        setValue('')
+        if (symbols.some(symbol => symbol.symbol === value)) {
+           let array = equation
+            array.push(value)
+            setEquation(array)
+            setValue('') 
+        }
+        
     }
     const handleChange = (e) => {
         const string = e.target.value
