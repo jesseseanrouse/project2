@@ -41,25 +41,20 @@ const Balance = (props) => {
                 console.log('Checked UpperCase' + value.charAt(i))
                 let symbolCheck = false
                 let element = ''
+                let i2 = i + 1
                 // checks the next letter to see if it is LowerCase
-                if (value.charAt(i + 1) === value.charAt(i+1).toLowerCase) {
-                    symbolCheck = true
-                    console.log(
-                      "Checked LowerCase under UpperCase" + value.charAt(i + 1)
-                    )
+                if (LowerArr.some(letter => letter === value.charAt(i2))) {
+                  symbolCheck = true
                 }
                 // Establish Element
-                if (symbolCheck = true) {
-                    element = value.charAt(i) + value.charAt(i + 1)
+                if (symbolCheck === true) {
+                    element = value.charAt(i) + value.charAt(i2)
                     step = 2
-                    console.log('Element has two letters')
                 } else {
                     element = value.charAt(i)
-                    console.log('Element has one letter')
                 }
                 // Now to check if it is even an element
                 if (symbols.some(symbol => symbol.symbol === element)) {
-                    console.log('checking if element is valid')
                     let array = equation
                     array.push(element)
                     setEquation(array)
