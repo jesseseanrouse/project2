@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 // Import Components
 import Reactant from "./balanceComponents/Reactants"
 import Result from "./balanceComponents/Result"
 
-import { array } from "prop-types"
 // Import Arrays with letters/numbers/()
 import NumbersArr from "./balanceComponents/NumbersArray"
 import UpperArr from "./balanceComponents/UpperArr"
@@ -52,10 +51,9 @@ const Balance = props => {
         tempArr[index1] = {...tempArr[index1], amount: tempAmount}
         tempArr.splice(index2,1)
         ElementDuplicate(tempArr)
+    } else {
+        setReactantElements(array)
     }
-    let array2 = reactantElements
-    array2.push(...array)
-    setReactantElements(array2)
   }
 
   const handleClickAdd = e => {
@@ -79,9 +77,6 @@ const Balance = props => {
     // Temp Stuff
     let eleAmount = ""
     let tempArr = []
-    let index = 0
-    // Needed a generic value
-    let x = 0
     while (i < value.length) {
       //   console.log("Loop " + i)
       let step = 1
@@ -154,7 +149,9 @@ const Balance = props => {
       array.push(value)
       setEquation(array)
       //   Result set up
-      ElementDuplicate(tempArr)
+      let array2 = reactantElements
+      array2.push(...tempArr)
+      ElementDuplicate(array2)
       setValue("")
     }
   }
@@ -179,7 +176,7 @@ const Balance = props => {
             onChange={handleChange}
           />
           <button onClick={handleClickAdd}>Reactant</button>
-          <button>Products</button>
+          <button>Product</button>
           <button>Done</button>
           <button>Reset</button>
         </form>
