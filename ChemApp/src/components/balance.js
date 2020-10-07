@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 // Import Components
 import Reactant from "./balanceComponents/Reactants"
-import Result from './balanceComponents/Result'
+import Result from "./balanceComponents/Result"
 
 import { array } from "prop-types"
 // Import Arrays with letters/numbers/()
@@ -18,6 +18,45 @@ const Balance = props => {
   const [equation, setEquation] = useState([])
   const [reactantElements, setReactantElements] = useState([])
   const [errorMessage, setErrorMessage] = useState("")
+
+  // Function for Element check
+  const ElementDuplicate = array => {
+    let i = 0
+    let flag = 0
+    let index1 = ''
+    let index2 = ''
+    while (i < array.length) {
+      let i2 = 0
+      let count = 0
+      while (i2 < array.length) {
+        if (array[i].element === array[i2].element) {
+          count++
+        //   this is because the loop will run all the way through thus giving a lower value for i2 than for i
+        if (i !== i2) {
+           index1 = i2
+          index2 = i 
+        }
+        }
+        i2++
+      }
+      if (count > 1) {
+        flag = 1
+      }
+      i++
+    }
+    if (flag === 1) {
+        let tempArr = array
+        console.log(tempArr[index2].amount)
+        console.log(tempArr[index1].amount)
+        let tempAmount = parseInt(tempArr[index2].amount) + parseInt(tempArr[index1].amount)
+        tempArr[index1] = {...tempArr[index1], amount: tempAmount}
+        tempArr.splice(index2,1)
+        ElementDuplicate(tempArr)
+    }
+    let array2 = reactantElements
+    array2.push(...array)
+    setReactantElements(array2)
+  }
 
   const handleClickAdd = e => {
     // To prevent any shenanigans
@@ -38,12 +77,13 @@ const Balance = props => {
     // to track an error
     let flag = 0
     // Temp Stuff
-    let ele = ''
-    let eleAmount = ''
+    let eleAmount = ""
     let tempArr = []
     let index = 0
+    // Needed a generic value
+    let x = 0
     while (i < value.length) {
-    //   console.log("Loop " + i)
+      //   console.log("Loop " + i)
       let step = 1
       // First Check is numbers why is explained after the check
       if (NumbersArr.some(number => number === value.charAt(i))) {
@@ -53,7 +93,7 @@ const Balance = props => {
           flag = 1
           setErrorMessage("Can not start with a number")
           break
-        } 
+        }
         // Check for UpperCase which is the start of an element
       } else if (UpperArr.some(letter => letter === value.charAt(i))) {
         // console.log("Checked UpperCase" + value.charAt(i))
@@ -74,26 +114,24 @@ const Balance = props => {
         }
         // Check for amount
         if (symbolCheck === true) {
-            if (NumbersArr.some(number => number === value.charAt(i3))) {
-                eleAmount = value.charAt(i3)
-                step = 3
-            } else {
-                eleAmount = 1
-                step = 2
-            }
+          if (NumbersArr.some(number => number === value.charAt(i3))) {
+            eleAmount = value.charAt(i3)
+            step = 3
+          } else {
+            eleAmount = 1
+            step = 2
+          }
         } else {
-            if (NumbersArr.some(number => number === value.charAt(i2))) {
-                eleAmount = value.charAt(i2)
-                step = 2
-            } else {
-                eleAmount = 1
-            }
+          if (NumbersArr.some(number => number === value.charAt(i2))) {
+            eleAmount = value.charAt(i2)
+            step = 2
+          } else {
+            eleAmount = 1
+          }
         }
         // Now to check if it is even an element
         if (symbols.some(symbol => symbol.symbol === element)) {
-            ele = element
-            tempArr.push({element: ele, amount: eleAmount})
-            index++
+          tempArr.push({ element: element, amount: eleAmount })
         } else {
           flag = 1
           setErrorMessage("You did not enter a valid element")
@@ -108,10 +146,15 @@ const Balance = props => {
     }
     // Final Check
     if (flag === 0) {
+      // equation set up
       let array = equation
+      if (array.length > 0) {
+        array.push(" + ")
+      }
       array.push(value)
       setEquation(array)
-      setReactantElements(tempArr)
+      //   Result set up
+      ElementDuplicate(tempArr)
       setValue("")
     }
   }
@@ -123,7 +166,7 @@ const Balance = props => {
     return <Reactant name={ele} key={index} />
   })
   const Results = reactantElements.map((ele, index) => {
-      return <Result element={ele.element} amount={ele.amount}/>
+    return <Result element={ele.element} amount={ele.amount} key={index} />
   })
   return (
     <>
@@ -136,7 +179,7 @@ const Balance = props => {
             onChange={handleChange}
           />
           <button onClick={handleClickAdd}>Reactant</button>
-          <button>Product</button>
+          <button>Products</button>
           <button>Done</button>
           <button>Reset</button>
         </form>
