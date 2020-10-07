@@ -4,9 +4,7 @@ import UpperArr from "../balanceComponents/UpperArr"
 import LowerArr from "../balanceComponents/LowerArr"
 import ParArr from "../balanceComponents/ParArr"
 //Import Functions
-import elementDuplicate from './elementDuplicateProduct'
-
-
+import elementDuplicate from "./elementDuplicateProduct"
 
 export default function compoundCheck(
   value,
@@ -45,6 +43,8 @@ export default function compoundCheck(
       // This is for looking into the future
       let i2 = i + 1
       let i3 = i + 2
+      let i4 = i + 3
+      let i5 = i + 4
       // checks the next letter to see if it is LowerCase
       if (LowerArr.some(letter => letter === value.charAt(i2))) {
         symbolCheck = true
@@ -59,7 +59,17 @@ export default function compoundCheck(
       if (symbolCheck === true) {
         if (NumbersArr.some(number => number === value.charAt(i3))) {
           eleAmount = value.charAt(i3)
-          step = 3
+          if (NumbersArr.some(number => number === value.charAt(i4))) {
+            eleAmount = eleAmount + value.charAt(i4)
+            if (NumbersArr.some(number => number === value.charAt(i5))) {
+              eleAmount = eleAmount + value.charAt(i5)
+              step = 5
+            } else {
+              step = 4
+            }
+          } else {
+            step = 3
+          }
         } else {
           eleAmount = 1
           step = 2
@@ -67,14 +77,24 @@ export default function compoundCheck(
       } else {
         if (NumbersArr.some(number => number === value.charAt(i2))) {
           eleAmount = value.charAt(i2)
-          step = 2
+          if (NumbersArr.some(number => number === value.charAt(i3))) {
+            eleAmount = eleAmount + value.charAt(i3)
+            if (NumbersArr.some(number => number === value.charAt(i4))) {
+              eleAmount = eleAmount + value.charAt(i4)
+              step = 4
+            } else {
+              step = 3
+            }
+          } else {
+            step = 2
+          }
         } else {
           eleAmount = 1
         }
       }
       // Now to check if it is even an element
       if (symbols.some(symbol => symbol.symbol === element)) {
-        tempArr.push({ element: element, amountP: eleAmount, amountR: 0 })
+        tempArr.push({ element: element, amountR: 0, amountP: eleAmount })
       } else {
         flag = 1
         setErrorMessage("You did not enter a valid element")
