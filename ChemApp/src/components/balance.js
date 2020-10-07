@@ -2,6 +2,7 @@ import React, { useState } from "react"
 // Import Components
 import Reactant from "./balanceComponents/Reactants"
 import Result from "./balanceComponents/Result"
+import Product from './balanceComponents/Products'
 
 // Import Functions
 import compoundCheckReactants from "./functions/compoundCheckReactants"
@@ -11,6 +12,7 @@ const Balance = props => {
   // console.log(props)
   const [value, setValue] = useState("")
   const [equationReact, setEquationReact] = useState([])
+  const [equationProduct, setEquationProduct] = useState([])
   const [resultElements, setResultElements] = useState([])
   const [errorMessage, setErrorMessage] = useState("")
   //   For Reactants
@@ -50,8 +52,8 @@ const Balance = props => {
       value,
       setErrorMessage,
       symbols,
-      equationReact,
-      setEquationReact,
+      equationProduct,
+      setEquationProduct,
       resultElements,
       setValue,
       setResultElements
@@ -63,6 +65,9 @@ const Balance = props => {
   }
   const Reactants = equationReact.map((ele, index) => {
     return <Reactant name={ele} key={index} />
+  })
+  const Products = equationProduct.map((ele, index) => {
+    return <Product name={ele} key={index} />
   })
   const Results = resultElements.map((ele, index) => {
     return <Result element={ele.element} amountR={ele.amountR} amountP={ele.amountP} key={index} />
@@ -84,6 +89,7 @@ const Balance = props => {
         </form>
         <div>{errorMessage}</div>
         {Reactants}
+        {Products}
         {Results}
       </section>
     </>
