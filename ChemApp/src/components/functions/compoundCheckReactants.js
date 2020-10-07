@@ -4,7 +4,7 @@ import UpperArr from "../balanceComponents/UpperArr"
 import LowerArr from "../balanceComponents/LowerArr"
 import ParArr from "../balanceComponents/ParArr"
 //Import Functions
-import elementDuplicate from './elementDuplicate'
+import elementDuplicate from './elementDuplicateReactants'
 
 
 
@@ -14,9 +14,9 @@ export default function compoundCheck(
   symbols,
   equation,
   setEquation,
-  reactantElements,
+  resultElements,
   setValue,
-  setReactantElements
+  setResultElements
 ) {
   // Now for the fun part
   let i = 0
@@ -74,7 +74,7 @@ export default function compoundCheck(
       }
       // Now to check if it is even an element
       if (symbols.some(symbol => symbol.symbol === element)) {
-        tempArr.push({ element: element, amount: eleAmount })
+        tempArr.push({ element: element, amountR: eleAmount, amountP: 0 })
       } else {
         flag = 1
         setErrorMessage("You did not enter a valid element")
@@ -97,9 +97,9 @@ export default function compoundCheck(
     array.push(value)
     setEquation(array)
     //   Result set up
-    let array2 = reactantElements
+    let array2 = resultElements
     array2.push(...tempArr)
-    elementDuplicate(array2, setReactantElements)
+    elementDuplicate(array2, setResultElements)
     setValue("")
   }
   return

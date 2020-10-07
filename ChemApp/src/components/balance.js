@@ -4,18 +4,17 @@ import Reactant from "./balanceComponents/Reactants"
 import Result from "./balanceComponents/Result"
 
 // Import Functions
-import compoundCheck from "./functions/compoundCheck"
+import compoundCheckReactants from "./functions/compoundCheckReactants"
+import compoundCheckProducts from './functions/compoundCheckProduct'
 
 const Balance = props => {
   // console.log(props)
   const [value, setValue] = useState("")
-  const [equation, setEquation] = useState([])
-  const [reactantElements, setReactantElements] = useState([])
+  const [equationReact, setEquationReact] = useState([])
+  const [resultElements, setResultElements] = useState([])
   const [errorMessage, setErrorMessage] = useState("")
-
-  
-
-  const handleClickAdd = e => {
+  //   For Reactants
+  const handleClickReactant = e => {
     // To prevent any shenanigans
     e.preventDefault()
     // To get a list of symbols to verify that entered values are elements
@@ -24,19 +23,49 @@ const Balance = props => {
     })
     // Sets error to ""
     setErrorMessage("")
-
     // Set up function call
-    compoundCheck(value, setErrorMessage, symbols, equation, setEquation, reactantElements, setValue, setReactantElements)
+    compoundCheckReactants(
+      value,
+      setErrorMessage,
+      symbols,
+      equationReact,
+      setEquationReact,
+      resultElements,
+      setValue,
+      setResultElements
+    )
+  }
+  //   ForProducts
+  const handleClickProduct = e => {
+    // To prevent any shenanigans
+    e.preventDefault()
+    // To get a list of symbols to verify that entered values are elements
+    const symbols = props.data.map(ele => {
+      return { symbol: ele.symbol }
+    })
+    // Sets error to ""
+    setErrorMessage("")
+    // Set up function call
+    compoundCheckProducts(
+      value,
+      setErrorMessage,
+      symbols,
+      equationReact,
+      setEquationReact,
+      resultElements,
+      setValue,
+      setResultElements
+    )
   }
   const handleChange = e => {
     const string = e.target.value
     setValue(string)
   }
-  const Reactants = equation.map((ele, index) => {
+  const Reactants = equationReact.map((ele, index) => {
     return <Reactant name={ele} key={index} />
   })
-  const Results = reactantElements.map((ele, index) => {
-    return <Result element={ele.element} amount={ele.amount} key={index} />
+  const Results = resultElements.map((ele, index) => {
+    return <Result element={ele.element} amountR={ele.amountR} amountP={ele.amountP} key={index} />
   })
   return (
     <>
@@ -48,8 +77,8 @@ const Balance = props => {
             value={value}
             onChange={handleChange}
           />
-          <button onClick={handleClickAdd}>Reactant</button>
-          <button>Product</button>
+          <button onClick={handleClickReactant}>Reactant</button>
+          <button onClick={handleClickProduct}>Product</button>
           <button>Done</button>
           <button>Reset</button>
         </form>
