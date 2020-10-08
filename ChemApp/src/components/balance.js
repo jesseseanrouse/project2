@@ -143,9 +143,9 @@ const Balance = props => {
         </form>
         <div>{errorMessage}</div>
         <ResultBalance eleReact={reactantMath} eleProduct={productMath} equReact={equationReact} equProduct={equationProduct} eleList={resultElements} setEleList={setResultElements} />
-        {Reactants}
-        {Products}
-        {Results}
+        {/* {Reactants} */}
+        {/* {Products} */}
+        {/* {Results} */}
       </section>
     </>
   )
