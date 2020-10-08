@@ -142,7 +142,7 @@ const Balance = props => {
           <button onClick={handleClickReset}>Reset</button>
         </form>
         <div>{errorMessage}</div>
-        <ResultBalance eleReact={reactantMath} eleProduct={productMath} equReact={equationReact} equProduct={equationProduct} eleList={resultElements} setEleList={setResultElements} start={done}/>
+        <ResultBalance eleReact={reactantMath} setEleReact={setReactantMath} eleProduct={productMath} setEleProduct={setProductMath} equReact={equationReact} equProduct={equationProduct} eleList={resultElements} setEleList={setResultElements} start={done}/>
         {/* {Reactants} */}
         {/* {Products} */}
         {/* {Results} */}

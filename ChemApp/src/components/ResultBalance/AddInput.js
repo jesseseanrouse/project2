@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react"
 
 const AddInput = props => {
-  // console.log(props)
+  //   console.log(props)
   let compound = props.value
   const [value, setValue] = useState(1)
   const handleChange = e => {
     let string = e.target.value
-    if (string === '') {
-        string = 0
+    if (string === "") {
+      string = 0
     }
     setValue(string)
-    console.log(string)
-    props.func()
+    props.func(value, props.compound, props.index, props.setFunc)
+    props.setFlag(true)
   }
   //   Set up Result
   useEffect(() => {
-    props.func()
+    props.func(value, props.compound, props.index, props.setFunc)
   }, [])
 
   return (

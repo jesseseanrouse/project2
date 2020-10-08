@@ -1,16 +1,22 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 // Import Building Component
 import AddInput from "./AddInput"
 import Result from "./Result"
 // Import Function
 import balanceFunc from "./Function/balanceFunc"
+import total from './Function/total'
 
 const ResultBalance = props => {
   //   console.log(props)
   //   State lives here
-  const [eleList, setEleState] = useState([])
+  const [eleList, setEleList] = useState([])
+  const [flag, setFlag] = useState(false)
   //   Need a value for props
   let fake = <AddInput value={""} />
+  //   Temporary
+//   useEffect(() => {
+//     setEleState(props.eleList)
+//   }, [])
   // Build Reactant side of Equation
   let Reactant = ""
   let i = 0
@@ -21,10 +27,11 @@ const ResultBalance = props => {
         Reactant = (
           <AddInput
             value={props.equReact[0]}
-            eleList={eleList}
-            setEleList={setEleState}
-            compound={props.eleReact[0]}
+            compound={props.eleReact}
+            index={i2}
             func={balanceFunc}
+            setFlag={setFlag}
+            setFunc={props.setEleReact}
           />
         )
         i2++
@@ -34,10 +41,11 @@ const ResultBalance = props => {
         <>
           <AddInput
             value={props.equReact[i]}
-            eleList={eleList}
-            setEleList={setEleState}
-            compound={props.eleReact[i2]}
+            compound={props.eleReact}
+            index={i2}
             func={balanceFunc}
+            setFlag={setFlag}
+            setFunc={props.setEleReact}
           />
           {Reactant}
         </>
@@ -63,10 +71,11 @@ const ResultBalance = props => {
         Product = (
           <AddInput
             value={props.equProduct[0]}
-            eleList={eleList}
-            setEleList={setEleState}
-            compound={props.eleProduct[0]}
+            compound={props.eleProduct}
+            index={i2}
             func={balanceFunc}
+            setFlag={setFlag}
+            setFunc={props.setEleProduct}
           />
         )
       }
@@ -75,10 +84,11 @@ const ResultBalance = props => {
         <>
           <AddInput
             value={props.equProduct[i]}
-            eleList={eleList}
-            setEleList={setEleState}
-            compound={props.Product[i2]}
+            compound={props.eleProduct}
+            index={i2}
             func={balanceFunc}
+            setFlag={setFlag}
+            setFunc={props.setEleProduct}
           />
           {Product}
         </>
@@ -93,8 +103,13 @@ const ResultBalance = props => {
     }
     i++
   }
+  //   Trigger Function to set values for Results
+  if (flag === true) {
+    total(eleList, setEleList, props.eleReact, props.eleProduct)
+    setFlag(false)
+  }
   // Set up Comparison
-  const Results = props.eleList.map((ele, index) => {
+  const Results = eleList.map((ele, index) => {
     return (
       <Result
         element={ele.element}

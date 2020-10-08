@@ -39,6 +39,10 @@ export default function compoundCheck(
         flag = 1
         setErrorMessage("Can not start with a number")
         break
+      } else {
+        flag = 1
+        setErrorMessage("Your number is too big")
+        break
       }
       // Check for UpperCase which is the start of an element
     } else if (UpperArr.some(letter => letter === value.charAt(i))) {
@@ -99,7 +103,7 @@ export default function compoundCheck(
       }
       // Now to check if it is even an element
       if (symbols.some(symbol => symbol.symbol === element)) {
-        tempArr.push({ element: element, amountR: eleAmount, amountP: 0, co: 1 })
+        tempArr.push({ element: element, amountR: eleAmount, amountP: 0})
       } else {
         flag = 1
         setErrorMessage("You did not enter a valid element")
