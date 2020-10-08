@@ -1,23 +1,32 @@
 import React from "react"
 // Import Building Component
 import AddInput from "./AddInput"
-import Result from './Result'
+import Result from "./Result"
+// Import Function
+import balanceFunc from './Function/balanceFunc'
 
 const ResultBalance = props => {
   //   console.log(props)
+  //   Need a value for props
+  let fake = <AddInput value={""} />
   // Build Reactant side of Equation
-  let Reactant = <AddInput value={""} start={true} />
+  let Reactant = ""
   let i = 0
+  let i2 = 0
   while (i < props.equReact.length) {
     if (i === 0) {
-      Reactant = <AddInput value={props.equReact[0]} start={false} />
-    } else if (i % 2 === 0) {
+      if (props.start === true) {
+        Reactant = <AddInput value={props.equReact[0]} />
+        i2++
+      }
+    } else if (i % 2 === 0 && i !== 0) {
       Reactant = (
         <>
-          <AddInput value={props.equReact[i]} start={false} />
-          {Reactant}{" "}
+          <AddInput value={props.equReact[i]} />
+          {Reactant}
         </>
       )
+      i2++
     } else {
       Reactant = (
         <>
@@ -29,15 +38,18 @@ const ResultBalance = props => {
     i++
   }
   //   Build Product side of Equation
-  let Product = <AddInput value={""} start={true} />
+  let Product = ""
   i = 0
+  i2 = 0
   while (i < props.equProduct.length) {
     if (i === 0) {
-      Product = <AddInput value={props.equProduct[0]} start={false} />
+      if (props.start === true) {
+        Product = <AddInput value={props.equProduct[0]} />
+      }
     } else if (i % 2 === 0) {
       Product = (
         <>
-          <AddInput value={props.equProduct[i]} start={false} />
+          <AddInput value={props.equProduct[i]} />
           {Product}
         </>
       )
@@ -62,13 +74,15 @@ const ResultBalance = props => {
       />
     )
   })
+//   Balancing Function
+balanceFunc()
   return (
-      <>
-    <div>
-      {Reactant}
-      {Product}
-    </div>
-    {Results}
+    <>
+      <div>
+        {Reactant}
+        {Product}
+      </div>
+      {Results}
     </>
   )
 }
