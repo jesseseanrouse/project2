@@ -1,12 +1,14 @@
-import React from "react"
+import React, { useState } from "react"
 // Import Building Component
 import AddInput from "./AddInput"
 import Result from "./Result"
 // Import Function
-import balanceFunc from './Function/balanceFunc'
+import balanceFunc from "./Function/balanceFunc"
 
 const ResultBalance = props => {
   //   console.log(props)
+  //   State lives here
+  const [eleList, setEleState] = useState([])
   //   Need a value for props
   let fake = <AddInput value={""} />
   // Build Reactant side of Equation
@@ -16,13 +18,27 @@ const ResultBalance = props => {
   while (i < props.equReact.length) {
     if (i === 0) {
       if (props.start === true) {
-        Reactant = <AddInput value={props.equReact[0]} />
+        Reactant = (
+          <AddInput
+            value={props.equReact[0]}
+            eleList={eleList}
+            setEleList={setEleState}
+            compound={props.eleReact[0]}
+            func={balanceFunc}
+          />
+        )
         i2++
       }
     } else if (i % 2 === 0 && i !== 0) {
       Reactant = (
         <>
-          <AddInput value={props.equReact[i]} />
+          <AddInput
+            value={props.equReact[i]}
+            eleList={eleList}
+            setEleList={setEleState}
+            compound={props.eleReact[i2]}
+            func={balanceFunc}
+          />
           {Reactant}
         </>
       )
@@ -44,12 +60,26 @@ const ResultBalance = props => {
   while (i < props.equProduct.length) {
     if (i === 0) {
       if (props.start === true) {
-        Product = <AddInput value={props.equProduct[0]} />
+        Product = (
+          <AddInput
+            value={props.equProduct[0]}
+            eleList={eleList}
+            setEleList={setEleState}
+            compound={props.eleProduct[0]}
+            func={balanceFunc}
+          />
+        )
       }
     } else if (i % 2 === 0) {
       Product = (
         <>
-          <AddInput value={props.equProduct[i]} />
+          <AddInput
+            value={props.equProduct[i]}
+            eleList={eleList}
+            setEleList={setEleState}
+            compound={props.Product[i2]}
+            func={balanceFunc}
+          />
           {Product}
         </>
       )
@@ -74,8 +104,6 @@ const ResultBalance = props => {
       />
     )
   })
-//   Balancing Function
-balanceFunc()
   return (
     <>
       <div>

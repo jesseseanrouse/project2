@@ -97,7 +97,7 @@ export default function compoundCheck(
       }
       // Now to check if it is even an element
       if (symbols.some(symbol => symbol.symbol === element)) {
-        tempArr.push({ element: element, amountR: 0, amountP: eleAmount })
+        tempArr.push({ element: element, amountR: 0, amountP: eleAmount, co: 1})
       } else {
         flag = 1
         setErrorMessage("You did not enter a valid element")
