@@ -10,12 +10,12 @@ const AddInput = props => {
       string = 0
     }
     setValue(string)
-    props.func(value, props.compound, props.index, props.setFunc)
+    props.func(value, props.compound, props.index, props.setFunction)
     props.setFlag(true)
   }
   //   Set up Result
   useEffect(() => {
-    props.func(value, props.compound, props.index, props.setFunc)
+    props.func(value, props.compound, props.index, props.setFunction)
   }, [])
 
   return (

@@ -11,13 +11,10 @@ const ResultBalance = props => {
   //   State lives here
   const [eleList, setEleList] = useState([])
   const [flag, setFlag] = useState(false)
+  const [resultR, setResultR] = useState('')
+  const [resultP, setResultP] = useState('')
   //   Need a value for props
   let fake = <AddInput value={""} />
-  //   Temporary
-//   useEffect(() => {
-//     setEleState(props.eleList)
-//   }, [])
-  // Build Reactant side of Equation
   let Reactant = ""
   let i = 0
   let i2 = 0
@@ -31,7 +28,7 @@ const ResultBalance = props => {
             index={i2}
             func={balanceFunc}
             setFlag={setFlag}
-            setFunc={props.setEleReact}
+            setFunction={setResultR}
           />
         )
         i2++
@@ -45,7 +42,7 @@ const ResultBalance = props => {
             index={i2}
             func={balanceFunc}
             setFlag={setFlag}
-            setFunc={props.setEleReact}
+            setFunction={setResultR}
           />
           {Reactant}
         </>
@@ -75,7 +72,7 @@ const ResultBalance = props => {
             index={i2}
             func={balanceFunc}
             setFlag={setFlag}
-            setFunc={props.setEleProduct}
+            setFunction={setResultP}
           />
         )
       }
@@ -88,7 +85,7 @@ const ResultBalance = props => {
             index={i2}
             func={balanceFunc}
             setFlag={setFlag}
-            setFunc={props.setEleProduct}
+            setFunction={setResultP}
           />
           {Product}
         </>
@@ -105,7 +102,7 @@ const ResultBalance = props => {
   }
   //   Trigger Function to set values for Results
   if (flag === true) {
-    total(eleList, setEleList, props.eleReact, props.eleProduct)
+    total(setEleList, resultR, resultP)
     setFlag(false)
   }
   // Set up Comparison

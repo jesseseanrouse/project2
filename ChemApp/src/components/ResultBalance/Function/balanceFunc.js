@@ -1,6 +1,8 @@
-export default function balanceFunc(value, compound, index, setFunc) {
+// import function
+import duplicate from './duplicate'
+
+export default function balanceFunc(value, compound, index, setFunction) {
     let coEff = parseInt(value)
-    console.log(compound[index][0][0])
     let array2 = compound
     let array = array2[index][0]
     let i = 0
@@ -11,6 +13,8 @@ export default function balanceFunc(value, compound, index, setFunc) {
         i++
     }
     array2[index] = { ...array2[index], array }
-    setFunc(array2)
+    // check for Duplicates
+    duplicate(array2)
+    setFunction(array2)
     return 
 }
