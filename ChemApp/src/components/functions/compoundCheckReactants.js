@@ -16,7 +16,10 @@ export default function compoundCheck(
   setEquation,
   resultElements,
   setValue,
-  setResultElements
+  setResultElements,
+  setDone,
+  mathReactant,
+  setMathReactant
 ) {
   // Now for the fun part
   let i = 0
@@ -118,10 +121,15 @@ export default function compoundCheck(
     }
     array.push(value)
     setEquation(array)
+    // Products Math Set up
+    let math = true
+    elementDuplicate(tempArr, setMathReactant, math, mathReactant)
     //   Result set up
+    math = false
     let array2 = resultElements
     array2.push(...tempArr)
-    elementDuplicate(array2, setResultElements)
+    elementDuplicate(array2, setResultElements, math, mathReactant)
+    setDone(true)
     setValue("")
   }
   return

@@ -1,5 +1,5 @@
 
-export default function elementDuplicate(array, setResultElements) {
+export default function elementDuplicate(array, setResultElements, math, mathReactant) {
   // Function for Element check
     let i = 0
     let flag = 0
@@ -26,15 +26,20 @@ export default function elementDuplicate(array, setResultElements) {
     }
     if (flag === 1) {
       let tempArr = array
-      console.log(tempArr[index2].amountR)
-      console.log(tempArr[index1].amountR)
       let tempAmount =
         parseInt(tempArr[index2].amountR) + parseInt(tempArr[index1].amountR)
       tempArr[index1] = { ...tempArr[index1], amountR: tempAmount }
       tempArr.splice(index2, 1)
       elementDuplicate(tempArr, setResultElements)
     } else {
-      setResultElements(array)
+      if (math === false) {
+        setResultElements(array)
+      } else if (math === true) {
+        let array2 = mathReactant
+        let array3 = [array]
+        array2.push(array3)
+        setResultElements(array2)
+      }
     }
   return
 }
