@@ -1,0 +1,11 @@
+section {
+    padding: 20px;
+}
+#compoundInput {
+    width: 175px;
+}
+footer {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}

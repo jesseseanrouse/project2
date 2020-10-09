@@ -19,10 +19,10 @@ const AddInput = props => {
   }, [])
 
   return (
-    <>
+    <div className="Results">
       <input type="number" value={value} onChange={handleChange}></input>
       <div>{compound}</div>
-    </>
+    </div>
   )
 }
 

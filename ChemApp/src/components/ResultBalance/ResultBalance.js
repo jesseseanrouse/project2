@@ -4,15 +4,19 @@ import AddInput from "./AddInput"
 import Result from "./Result"
 // Import Function
 import balanceFunc from "./Function/balanceFunc"
-import total from './Function/total'
+import total from "./Function/total"
+import "./style.css"
+// font awesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons"
 
 const ResultBalance = props => {
   //   console.log(props)
   //   State lives here
   const [eleList, setEleList] = useState([])
   const [flag, setFlag] = useState(false)
-  const [resultR, setResultR] = useState('')
-  const [resultP, setResultP] = useState('')
+  const [resultR, setResultR] = useState("")
+  const [resultP, setResultP] = useState("")
   //   Need a value for props
   let fake = <AddInput value={""} />
   let Reactant = ""
@@ -120,6 +124,9 @@ const ResultBalance = props => {
     <>
       <div>
         {Reactant}
+        <div id="arrow">
+          <FontAwesomeIcon icon={faLongArrowAltRight} size="1x" />
+        </div>
         {Product}
       </div>
       {Results}

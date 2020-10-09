@@ -4,6 +4,7 @@ import Reactant from "./balanceComponents/Reactants"
 import Result from "./balanceComponents/Result"
 import Product from "./balanceComponents/Products"
 import ResultBalance from "./ResultBalance/ResultBalance"
+import './balance.css'
 
 // Import Functions
 import compoundCheckReactants from "./functions/compoundCheckReactants"
@@ -119,6 +120,7 @@ const Balance = props => {
       <section>
         <form>
           <input
+            id='compoundInput'
             type="text"
             placeholder="Compound"
             value={value}
@@ -128,11 +130,11 @@ const Balance = props => {
           <button onClick={handleClickProduct}>Product</button>
           <button onClick={handleClickReset}>Reset</button>
         </form>
-        <div>{errorMessage}</div>
+        <aside>{errorMessage}</aside>
         <ResultBalance eleReact={reactantMath} eleProduct={productMath}  equReact={equationReact} equProduct={equationProduct} eleList={resultElements} setEleList={setResultElements} start={done}/>
         {/* {Reactants} */}
         {/* {Products} */}
-        {/* {Results} */}
+        <footer>{Results}</footer>
       </section>
     </>
   )

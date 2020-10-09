@@ -1,8 +1,9 @@
 import React from "react"
+import './style.css'
 
 const about = () => {
   return (
-    <>
+    <main id='about'>
       <h1>About</h1>
       <p>
         The purpose of this app to help people who have trouble doing the math
@@ -30,7 +31,7 @@ const about = () => {
         <li>Currently the balancing portion of this app is not working. This will be fix as soon as possible. If you change the numbers the site will crash.</li>
         <li>*parentheses is currently not working. If you want to write a polyatomic ion, you will have to write it out for ion within the parentheses. Example: Ca(NO3)2 = CaNO3NO3 </li>
       </ul>
-    </>
+    </main>
   )
 }
 
