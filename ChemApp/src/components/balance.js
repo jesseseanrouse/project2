@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 // Import Components
 import Reactant from "./balanceComponents/Reactants"
 import Result from "./balanceComponents/Result"
@@ -10,6 +10,15 @@ import compoundCheckReactants from "./functions/compoundCheckReactants"
 import compoundCheckProducts from "./functions/compoundCheckProduct"
 
 const Balance = props => {
+  // fetch call
+  const [data, setData] = useState({})
+  useEffect(() => {
+    fetch("https://neelpatel05.pythonanywhere.com/")
+      .then(res => res.json())
+      .then(data => {
+        setData(data)
+      })
+  }, [])
   // console.log(props)
   const [value, setValue] = useState("")
   const [equationReact, setEquationReact] = useState([])
@@ -25,7 +34,7 @@ const Balance = props => {
     // To prevent any shenanigans
     e.preventDefault()
     // To get a list of symbols to verify that entered values are elements
-    const symbols = props.data.map(ele => {
+    const symbols = data.map(ele => {
       return { symbol: ele.symbol }
     })
     // Sets error to ""
@@ -105,27 +114,6 @@ const Balance = props => {
     setReactantMath([])
     setProductMath([])
   }
-  // This handles Done button
-  const handleClickDone = e => {
-    // Don't want this doing anything I don't want it to
-    e.preventDefault()
-    // Check to see any value in Results
-    if (done === false) {
-      setErrorMessage("You need to enter something")
-    } else {
-      if (resultElements.some(number => number.amountR === 0)) {
-        setErrorMessage(
-          "You are missing an element on the Reactant side of the equation"
-        )
-      } else if (resultElements.some(number => number.amountP === 0)) {
-        setErrorMessage(
-          "You are missing an element on the Products side of the equation"
-        )
-      } else {
-        
-      }
-    }
-  }
   return (
     <>
       <section>
@@ -138,7 +126,6 @@ const Balance = props => {
           />
           <button onClick={handleClickReactant}>Reactant</button>
           <button onClick={handleClickProduct}>Product</button>
-          <button onClick={handleClickDone}>Done</button>
           <button onClick={handleClickReset}>Reset</button>
         </form>
         <div>{errorMessage}</div>

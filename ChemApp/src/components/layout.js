@@ -38,9 +38,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Nav />
-      <About />
-      <Balance data={eleData}/>
-      <div></div>
+      {children}
     </>
   )
 }
