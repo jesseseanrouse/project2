@@ -59,7 +59,7 @@ const Balance = props => {
     // To prevent any shenanigans
     e.preventDefault()
     // To get a list of symbols to verify that entered values are elements
-    const symbols = props.data.map(ele => {
+    const symbols = data.map(ele => {
       return { symbol: ele.symbol }
     })
     // Sets error to ""

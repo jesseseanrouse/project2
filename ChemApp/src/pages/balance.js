@@ -6,7 +6,7 @@ import Balance from "../components/balance"
 
 const balance = () => (
   <Layout>
-    <SEO title="Balance" />
+    <SEO title="balance" />
     <Balance />
   </Layout>
 )

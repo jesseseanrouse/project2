@@ -27,9 +27,14 @@ export default function compoundCheck(
   let eleAmount = ""
   let tempArr = []
   while (i < value.length) {
-    //   console.log("Loop " + i)
     let step = 1
-    // First Check is numbers why is explained after the check
+    // Check to make sure they entered something
+    if (value === "") {
+      flag = 1
+      setErrorMessage('You have to enter something')
+      break
+    }
+    // Check if number why is explained after the check
     if (NumbersArr.some(number => number === value.charAt(i))) {
       // console.log("Checked Number")
       // Cannot start with a number, the point is to balance

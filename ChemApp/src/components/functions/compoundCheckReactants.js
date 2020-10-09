@@ -29,8 +29,13 @@ export default function compoundCheck(
   let eleAmount = ""
   let tempArr = []
   while (i < value.length) {
-    //   console.log("Loop " + i)
     let step = 1
+    // Check to make sure they entered something
+    if (value === "") {
+      flag = 1
+      setErrorMessage("You have to enter something")
+      break
+    }
     // First Check is numbers why is explained after the check
     if (NumbersArr.some(number => number === value.charAt(i))) {
       // console.log("Checked Number")
@@ -103,7 +108,7 @@ export default function compoundCheck(
       }
       // Now to check if it is even an element
       if (symbols.some(symbol => symbol.symbol === element)) {
-        tempArr.push({ element: element, amountR: eleAmount, amountP: 0})
+        tempArr.push({ element: element, amountR: eleAmount, amountP: 0 })
       } else {
         flag = 1
         setErrorMessage("You did not enter a valid element")
