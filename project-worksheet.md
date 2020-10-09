@@ -66,32 +66,32 @@ May have more or less depending on needs of the App
 | Wiki Details | Shows Details for element selected | 
 
 
-| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
+| Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| App | H | .5 hrs| -hrs | -hrs |
-| Home| H | 1 hr| hrs | hrs |
-| Balance | H | .5 hrs | hrs | hrs |
-| Balance Equation | H | 3 hrs | hrs | hrs |
-| Balance Elements | H | 3 hrs | hrs | hrs |
-| Stoich | M | .5 hr| hrs | hrs |
-| Stoich Equation | M | 3 hr| hrs | hrs |
-| Stoich Start/End | M | 3 hr| hrs | hrs |
-| Stoich Math | M | 4 hr| hrs | hrs |
+| App | H | .5 hrs| -hrs | 1 hrs |
+| Home| H | 1 hr| hrs | 1 hrs |
+| Balance | H | .5 hrs | hrs |  1 hrs |
+| Balance Equation | H | 3 hrs | hrs | 20 hrs |
+| Balance Elements | H | 3 hrs | hrs | 8 hrs |
+| Stoich | M | .5 hr| hrs | x hrs |
+| Stoich Equation | M | 3 hr| hrs | x hrs |
+| Stoich Start/End | M | 3 hr| hrs | x hrs |
+| Stoich Math | M | 4 hr| hrs | x hrs |
 | Wiki | L | 3 hr| hrs | hrs |
 | Wiki Details | L | 1 hr| hrs | hrs |
-| Total | H | 22.5 hrs| hrs | hrs |
+| Total | H | 22.5 hrs| hrs | 31 hrs |
 
-I'm really not including CSS times up above, mostly taking function into account. I'll propbabily spend 10+ hours on CSS jazziness
+I'm really not including CSS times up above, mostly taking function into account. I actually lost track of how much time I spent on this. I believe this is fairly accurate. Also I made all sorts of components that I summed up in Balance Equations and Balance Elements above.
 
 | Objective | Day | Actual Day |
 | --- | :---: |  :---: |
 | Gatsby Reasearch | - 2 | 1 |
-| Conponent Setup | 1 | |
-| Balance Functionality | 2 | |
-| Stoich Functionality | 3 | |
-| SCSS for Site | 4| |
+| Component Setup | 1 | 1 |
+| Balance Functionality | 2 | x |
+| Stoich Functionality | 3 | x |
+| SCSS for Site | 4| x |
 | Wiki | 4 | |
-|Bug Fixing/try to break | 5 |
+|Bug Fixing/try to break | 5 | 5 |
 
 Day is Monday
 
@@ -103,7 +103,5 @@ Day is Monday
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  Code snippet should not be greater than 10 lines of code. 
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+
 ```

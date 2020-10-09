@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react"
 // Import Components
-import Reactant from "./balanceComponents/Reactants"
 import Result from "./balanceComponents/Result"
-import Product from "./balanceComponents/Products"
 import ResultBalance from "./ResultBalance/ResultBalance"
 import './balance.css'
 
@@ -85,14 +83,6 @@ const Balance = props => {
     const string = e.target.value
     setValue(string)
   }
-  //   This creates the Reactants side of the equation
-  const Reactants = equationReact.map((ele, index) => {
-    return <Reactant name={ele} key={index} />
-  })
-  //   This creates teh Products side of the equation
-  const Products = equationProduct.map((ele, index) => {
-    return <Product name={ele} key={index} />
-  })
   //   This produces the Results
   const Results = resultElements.map((ele, index) => {
     return (
@@ -132,8 +122,6 @@ const Balance = props => {
         </form>
         <aside>{errorMessage}</aside>
         <ResultBalance eleReact={reactantMath} eleProduct={productMath}  equReact={equationReact} equProduct={equationProduct} eleList={resultElements} setEleList={setResultElements} start={done}/>
-        {/* {Reactants} */}
-        {/* {Products} */}
         <footer>{Results}</footer>
       </section>
     </>

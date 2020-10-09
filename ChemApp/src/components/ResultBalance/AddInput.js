@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 
 const AddInput = props => {
   //   console.log(props)
@@ -10,13 +10,8 @@ const AddInput = props => {
       string = 0
     }
     setValue(string)
-    props.func(value, props.compound, props.index, props.setFunction)
-    props.setFlag(true)
   }
-  //   Set up Result
-  useEffect(() => {
-    props.func(value, props.compound, props.index, props.setFunction)
-  }, [])
+  
 
   return (
     <div className="Results">

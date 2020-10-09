@@ -2,7 +2,6 @@
 import NumbersArr from "../balanceComponents/NumbersArray"
 import UpperArr from "../balanceComponents/UpperArr"
 import LowerArr from "../balanceComponents/LowerArr"
-import ParArr from "../balanceComponents/ParArr"
 //Import Functions
 import elementDuplicate from './elementDuplicateReactants'
 
