@@ -1,0 +1,18 @@
+nav {
+   background-color: blue; 
+}
+#links {
+    background-color: cornflowerblue;
+    font-size: 45px;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    height: 140px;
+    padding: 20px;
+    justify-content: space-around;
+}
+.icon {
+    text-align: right;
+    padding: 10px;
+    color: white;
+}
