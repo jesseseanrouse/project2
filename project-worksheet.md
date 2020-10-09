@@ -77,9 +77,9 @@ May have more or less depending on needs of the App
 | Stoich Equation | M | 3 hr| hrs | x hrs |
 | Stoich Start/End | M | 3 hr| hrs | x hrs |
 | Stoich Math | M | 4 hr| hrs | x hrs |
-| Wiki | L | 3 hr| hrs | hrs |
-| Wiki Details | L | 1 hr| hrs | hrs |
-| Total | H | 22.5 hrs| hrs | 31 hrs |
+| Wiki | L | 3 hr| hrs | 2 hrs |
+| Wiki Details | L | 1 hr| hrs | x hrs |
+| Total | H | 22.5 hrs| hrs | 33 hrs |
 
 I'm really not including CSS times up above, mostly taking function into account. I actually lost track of how much time I spent on this. I believe this is fairly accurate. Also I made all sorts of components that I summed up in Balance Equations and Balance Elements above.
 
@@ -90,7 +90,7 @@ I'm really not including CSS times up above, mostly taking function into account
 | Balance Functionality | 2 | x |
 | Stoich Functionality | 3 | x |
 | SCSS for Site | 4| x |
-| Wiki | 4 | |
+| Wiki | 4 | x |
 |Bug Fixing/try to break | 5 | 5 |
 
 Day is Monday
@@ -100,7 +100,7 @@ Day is Monday
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  Code snippet should not be greater than 10 lines of code. 
+The code I am most proud of is far greater than 10 lines. Its the function that examines user input to determine whether or not it has real elements and counts how many of each elements are in the compound.
 
 ```
 
