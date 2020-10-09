@@ -96,8 +96,8 @@ I'm really not including CSS times up above, mostly taking function into account
 Day is Monday
 
 ## Additional Libraries
- react 
- gatsby
+ - react 
+ - gatsby
 
 ## Code Snippet
 
