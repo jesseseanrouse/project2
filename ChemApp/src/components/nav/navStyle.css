@@ -16,3 +16,13 @@ nav {
     padding: 10px;
     color: white;
 }
+@media screen and (min-width: 500px) {
+    #icon{
+        display: none;
+    }
+    #links {
+        display: flex;
+        flex-direction: row;
+        height: 70px;
+    }
+}
